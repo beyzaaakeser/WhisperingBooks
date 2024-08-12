@@ -1,0 +1,17 @@
+.card{
+
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 3px 3px 5px #FAF0E6;
+    min-height: 350px;
+    max-height: 350px;
+  
+    img{
+        width: 60%;
+        height: 200px;
+        margin: auto;
+        box-shadow: 3px 3px 5px grey;
+    }
+}

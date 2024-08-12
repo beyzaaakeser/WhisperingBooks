@@ -1,0 +1,17 @@
+.header-container {
+  background-color: #FAF0E6;
+  height: 80px;
+
+  img {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(2px 2px 4px rebeccapurple);
+  }
+
+  h2{
+    color: rebeccapurple;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: deepskyblue 2px 2px 4px;
+  }
+}
