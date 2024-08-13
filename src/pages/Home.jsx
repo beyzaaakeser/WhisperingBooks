@@ -7,9 +7,9 @@ import Container from '../components/Container';
 const Home = () => {
   const [books, setBooks] = useState(null);
   const apiKey = import.meta.env.VITE_API_KEY;
+  const apiURL = import.meta.env.VITE_API_URL;
   useEffect(() => {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=roman&printType=books&maxResults=20&key=${apiKey}`;
-
+    const url = `${apiURL}?q=web&printType=books&maxResults=20&key=${apiKey}`;
     axios
       .get(url)
       .then((res) => setBooks(res.data.items))
@@ -22,9 +22,8 @@ const Home = () => {
         <div className="cards-container">
           {books?.map(
             (book) =>
-              book.volumeInfo?.imageLinks?.smallThumbnail && (
-                <Card key={book.id} book={book} />
-              )
+              book.volumeInfo?.imageLinks?.smallThumbnail &&
+              book.volumeInfo.authors && <Card key={book.id} book={book} />
           )}
         </div>
       </div>

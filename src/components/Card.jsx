@@ -1,20 +1,26 @@
 import { Link } from 'react-router-dom';
-import "./styles/card.scss"
+import './styles/card.scss';
+import { RxDoubleArrowRight } from 'react-icons/rx';
 const Card = ({ book }) => {
   return (
-    <div className="card shadow p-2">
-
+    <div className="card shadow">
       <img
         className="rounded img-fluid"
         src={book.volumeInfo?.imageLinks?.smallThumbnail}
       />
 
       <div className="card-body ">
-        <h4>{book.volumeInfo.title}</h4> 
-        <h5>{book.volumeInfo.authors}</h5>
+        <div className="flex flex-nowrap gap-2">
+          <span>Name</span> <h4>{book.volumeInfo.title}</h4>
+        </div>
+        <div className="flex flex-nowrap gap-2 mt-3">
+          <span>Author</span>
+          <h5>{book.volumeInfo.authors}</h5>
+        </div>
       </div>
-      <Link to={`/detil/${book.id}`} className="px-2 py-1 border-indigo-600 border rounded bg-indigo-100 mt-10">
-        Detay Gör
+
+      <Link to={`/detail/${book.id}`} className="text-md px-2 py-1 detail-btn">
+        Details
       </Link>
     </div>
   );
