@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/maincard.scss';
 import { Link } from 'react-router-dom';
+import Loader from './Loader';
 const MainCard = ({ books }) => {
   function getRandomTwoBooks(books) {
     const shuffled = books.sort(() => 0.5 - Math.random()); // Array'i karıştır
@@ -9,18 +10,14 @@ const MainCard = ({ books }) => {
 
   // Örnek kullanım
   const randomBooks = getRandomTwoBooks(books);
- 
+  console.log(randomBooks);
 
   return (
     <div className="main-container">
-      {randomBooks?.map((book) => (
-        <div key={book.id} className="main-info ">
+      {randomBooks?.map((book, index) => (
+        <div key={index} className="main-info ">
           <div className="main-img">
-            <img
-              src={book.volumeInfo?.imageLinks?.smallThumbnail}
-              
-              alt=""
-            />
+            <img src={book.volumeInfo?.imageLinks?.smallThumbnail} alt="" />
           </div>
 
           <div className="flex flex-col justify-around h-full infos ">

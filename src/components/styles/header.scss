@@ -1,18 +1,26 @@
 .header-container {
-  background-color: #FAF0E6;
+  background-color: #faf0e6;
   height: 80px;
   padding: 0 17px 0 8px;
   img {
     width: 80px;
     height: 80px;
     filter: drop-shadow(2px 2px 4px rebeccapurple);
+    @media (max-width: 800px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
-  h2{
+  h2 {
     color: saddlebrown;
     font-size: 30px;
     font-weight: bold;
     text-shadow: rgb(158, 157, 156) 2px 2px 4px;
-    font-family: "Playwrite DK Uloopet", cursive;
+    font-family: 'Playwrite DK Uloopet', cursive;
+
+    @media (max-width: 800px) {
+      font-size: 25px;
+    }
   }
 }

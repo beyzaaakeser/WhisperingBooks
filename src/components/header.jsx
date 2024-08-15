@@ -10,7 +10,7 @@ const Header = () => {
           <img src="/src/assets/img/book-logo.png" alt="" />
         </Link>
         <Link to="/" className="">
-          <h2 className="hidden sm:block">WhisperingBooks</h2>
+          <h2>WhisperingBooks</h2>
         </Link>
       </div>
     </div>
