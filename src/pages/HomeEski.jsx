@@ -14,10 +14,7 @@ const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   
   // URL'den query parametresini alıyoruz
-  const searchQuery = searchParams.get('query');
-
-  const query = searchQuery ? searchQuery : "web"
-  
+  const query = searchParams.get('query') || '';
 
   // İlk yükleme ve query parametresi değiştiğinde API çağrısı
   useEffect(() => {
@@ -27,8 +24,6 @@ const Home = () => {
         .get(url)
         .then((res) => setBooks(res.data.items))
         .catch((err) => console.log(err));
-    } else {
-      setBooks(null); // Query boşsa kitapları temizle
     }
   }, [query]);
 
@@ -50,7 +45,7 @@ const Home = () => {
           type="text"
           className="lg:w-[400px] block outline-none rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-700 sm:text-sm sm:leading-6"
           placeholder="Search Books"
-           // URL'den alınan query'yi input'ta gösteriyoruz
+          value={query} // URL'den alınan query'yi input'ta gösteriyoruz
           onChange={handleInputChange}
         />
       </div>

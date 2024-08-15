@@ -38,11 +38,11 @@ const Detail = () => {
                 <BookInfo title={'Name'} value={book?.volumeInfo?.title} />
                 <BookInfo
                   title={'Author'}
-                  value={book?.volumeInfo?.authors[0]}
+                  value={book?.volumeInfo?.authors}
                 />
                 <BookInfo
                   title={'Category'}
-                  value={book?.volumeInfo?.categories[0]}
+                  value={book?.volumeInfo?.categories}
                 />
                 <BookInfo
                   title={'Language'}
