@@ -7,7 +7,7 @@ const Undefined = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location);
+ 
 
   return (
     <div className="h-full">

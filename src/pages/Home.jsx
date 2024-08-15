@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import './styles/home.scss';
 import Container from '../components/Container';
 import MainCard from '../components/MainCard';
+import { useLocation } from 'react-router';
 
 const Home = () => {
   const [books, setBooks] = useState(null);
@@ -19,7 +20,7 @@ const Home = () => {
 
   return (
     <Container>
-    {  books && <MainCard books={books}/>}
+      {books && <MainCard books={books} />}
       <div className="home my-5">
         <div className="cards-container">
           {books?.map(

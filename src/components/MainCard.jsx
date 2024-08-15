@@ -9,7 +9,7 @@ const MainCard = ({ books }) => {
 
   // Örnek kullanım
   const randomBooks = getRandomTwoBooks(books);
-  console.log(randomBooks);
+ 
 
   return (
     <div className="main-container">
