@@ -18,7 +18,7 @@ const MainCard = ({ books }) => {
           <div className='main-img'>
             <img
               src={book.volumeInfo?.imageLinks?.smallThumbnail}
-              className="w-25"
+              className=""
               alt=""
             />
           </div>

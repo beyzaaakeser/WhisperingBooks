@@ -1,0 +1,50 @@
+.detail-container {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+  table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+
+    tbody {
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 30px;
+    }
+    tr {
+      td {
+        padding: 0 10px;
+      }
+      td:first-child {
+        min-width: 150px;
+      }
+    }
+  }
+  .detail-img {
+    max-width: 350px;
+    min-width: 350px;
+    height: auto;
+  }
+  .desc {
+    display: -webkit-box; /* Flexbox kullanarak kutuyu görüntüler */
+    -webkit-box-orient: vertical; /* Kutuyu dikey olarak hizalar */
+    -webkit-line-clamp: 15; /* Satır sayısını 10 ile sınırlar */
+    overflow: hidden; /* Taşan kısmı gizler */
+    text-overflow: ellipsis;
+    text-indent: 2em;
+    color: rgb(49, 49, 49);
+    text-align: justify;
+
+    p::first-letter {
+      font-size: 42px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: saddlebrown;
+    }
+  }
+
+  @media (max-width:800px){
+    padding: 20px;
+  }
+}
