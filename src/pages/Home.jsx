@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import './styles/home.scss';
 import Container from '../components/Container';
+import MainCard from '../components/MainCard';
 
 const Home = () => {
   const [books, setBooks] = useState(null);
@@ -15,9 +16,10 @@ const Home = () => {
       .then((res) => setBooks(res.data.items))
       .catch((err) => console.log(err));
   }, []);
-  console.log(books);
+
   return (
     <Container>
+    {  books && <MainCard books={books}/>}
       <div className="home my-5">
         <div className="cards-container">
           {books?.map(

@@ -10,15 +10,17 @@ import Products from './pages/Products';
 const App = () => {
   return (
     <BrowserRouter className="">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/products" element={<Products />} />
-        
-        <Route path="/undefined" element={<Undefined />} />
-      </Routes>
-      <Footer/>
+      <div className='page'>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/products" element={<Products />} />
+
+          <Route path="/undefined" element={<Undefined />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };

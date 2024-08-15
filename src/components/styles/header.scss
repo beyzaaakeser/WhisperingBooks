@@ -1,7 +1,7 @@
 .header-container {
   background-color: #FAF0E6;
   height: 80px;
-
+  padding: 0 17px 0 8px;
   img {
     width: 80px;
     height: 80px;
@@ -10,8 +10,9 @@
 
   h2{
     color: saddlebrown;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
-    text-shadow: rgb(160, 97, 53) 2px 2px 4px;
+    text-shadow: rgb(158, 157, 156) 2px 2px 4px;
+    font-family: "Playwrite DK Uloopet", cursive;
   }
 }
