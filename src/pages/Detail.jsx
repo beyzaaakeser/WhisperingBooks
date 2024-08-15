@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './styles/Detail.scss';
 import Container from '../components/Container';
 import Loader from '../components/Loader';
+import BookInfo from '../components/BookInfo.jsx';
 
 const Detail = () => {
   const params = useParams();
   const [book, setBook] = useState(null);
+  const navigate = useNavigate();
 
   const apiURL = import.meta.env.VITE_API_URL;
   useEffect(() => {
@@ -15,7 +17,7 @@ const Detail = () => {
     axios
       .get(url)
       .then((res) => setBook(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => navigate('/undefined'));
   }, []);
 
   console.log(book);
@@ -73,12 +75,3 @@ const Detail = () => {
 };
 
 export default Detail;
-
-const BookInfo = ({ title, value }) => {
-  return (
-    <tr>
-      <td className=" border border-slate-300">{title}</td>
-      <td className=" border border-slate-300">{value}</td>
-    </tr>
-  );
-};
