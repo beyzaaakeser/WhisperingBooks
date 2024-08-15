@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './styles/card.scss';
-import { RxDoubleArrowRight } from 'react-icons/rx';
 const Card = ({ book }) => {
   return (
     <div className="card shadow">

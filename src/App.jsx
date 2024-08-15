@@ -9,7 +9,7 @@ import Products from './pages/Products';
 
 const App = () => {
   return (
-    <BrowserRouter className="">
+    <BrowserRouter>
       <div className="page">
         <Header />
         <Routes>

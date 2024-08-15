@@ -17,7 +17,7 @@ const Detail = () => {
     axios
       .get(url)
       .then((res) => setBook(res.data))
-      .catch((err) => navigate('/undefined'));
+      .catch((err) => navigate('/undefined',{state: err.response.status}));
   }, []);
 
   console.log(book);

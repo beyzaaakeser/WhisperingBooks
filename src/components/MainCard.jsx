@@ -14,11 +14,11 @@ const MainCard = ({ books }) => {
   return (
     <div className="main-container">
       {randomBooks?.map((book) => (
-        <div className="main-info ">
-          <div className='main-img'>
+        <div key={book.id} className="main-info ">
+          <div className="main-img">
             <img
               src={book.volumeInfo?.imageLinks?.smallThumbnail}
-              className=""
+              
               alt=""
             />
           </div>
@@ -33,16 +33,13 @@ const MainCard = ({ books }) => {
             </div>
             <div className="flex flex-nowrap  ">
               <h5>Language </h5>
-              <span class=" uppercase ">
-                : {book.volumeInfo.language}
-              </span>
+              <span className=" uppercase ">: {book.volumeInfo.language}</span>
             </div>
             <div className="flex flex-nowrap">
               <h5>Page</h5> <span>: {book.volumeInfo.pageCount}</span>{' '}
             </div>
             <div className="flex flex-nowrap">
-              <h5>Date</h5>{' '}
-              <span>: {book.volumeInfo.publishedDate}</span>{' '}
+              <h5>Date</h5> <span>: {book.volumeInfo.publishedDate}</span>{' '}
             </div>
             <div>
               <p className="desc">{book.volumeInfo?.description}</p>

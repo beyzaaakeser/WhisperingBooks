@@ -1,13 +1,22 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { TbArrowLoopRight } from 'react-icons/tb';
+import './styles/undefined.scss';
+
 const Undefined = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log(location);
+
   return (
     <div className="h-full">
+      {location.state && (
+        <p className="text-center p-0 m-0 text-amber-600  ">Error Code : {location.state} </p>
+      )}
       <img
-        src="https://cdn.svgator.com/images/2024/04/book-with-broken-pages-animation-404-error.gif"
-        className="rounded py-6 h-full m-auto"
+        src="https://i.pinimg.com/originals/65/3a/91/653a912fceab7eb5de03b0a7b7135b4e.gif"
+        className="rounded pb-6 pt-3 h-full m-auto "
       />
 
       <div
