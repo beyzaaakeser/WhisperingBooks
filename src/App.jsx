@@ -1,33 +1,50 @@
 import React from 'react';
-import Header from './components/header';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
-import Footer from './components/footer';
 import Undefined from './pages/Undefined';
 import Detail from './pages/Detail';
 import Products from './pages/Products';
+import Layout from './components/Layout';
+
+const Story = () => <h1>STORY</h1>;
+const Novel = () => <h1>NOVEL</h1>;
+
+// createBrowserRouter ile tüm rotaları tanımlıyoruz
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <Layout/>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'products',
+        element: <Products />,
+        children: [
+          { path: 'story', element: <Story /> },
+          { path: 'novel', element: <Novel /> },
+        ],
+      },
+      {
+        path: 'detail/:id',
+        element: <Detail />,
+      },
+      {
+        path: '*',
+        element: <Undefined />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="page">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/detail/:id" element={<Detail />} />
-
-          <Route path='/products' element={<Products/>}>
-              <Route path='story' element={<h1>STORY</h1>} />
-              <Route path='novel' element={<h1>NOVEL</h1>} />
-          </Route>
-
-          <Route path="*" element={<Undefined />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
