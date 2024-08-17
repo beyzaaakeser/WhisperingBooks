@@ -35,7 +35,7 @@
         padding-bottom: 5px;
       }
 
-      div:first-child{
+      div:first-child {
         border: none;
       }
       h5 {
@@ -72,35 +72,21 @@
         overflow: hidden; /* Taşan kısmı gizler */
         text-overflow: ellipsis; /* Taşan kısmı üç nokta ile gösterir */
       }
-
-      .detail-btn {
-        background-color: #faf6f2;
-        border: 1px solid saddlebrown;
-        border-radius: 5px;
-        display: block;
-        cursor: pointer;
-        transition: all 0.4s ease;
-        &:hover {
-          background-color: saddlebrown;
-          color: #faf6f2;
-        }
-      }
     }
   }
 }
 
 @media (max-width: 800px) {
-  .main-container{
+  .main-container {
     padding: 20px;
-    .main-info:last-child{
+    .main-info:last-child {
       display: none;
     }
   }
 }
 
-
 @media (max-width: 510px) {
-  .main-container{
+  .main-container {
     display: none;
   }
 }

@@ -1,0 +1,28 @@
+
+.detail-btn {
+    background-color: #faf6f2;
+    border: 1px solid saddlebrown;
+    border-radius: 5px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    letter-spacing: 1.5px;
+  
+    div{
+      padding-bottom: 0 !important;
+    }
+  
+    .text-xl {
+      transition: transform 0.6s ease; // Geçiş animasyonu
+    }
+  
+    &:hover {
+      background-color: saddlebrown;
+      color: #faf6f2;
+      .text-xl {
+        transform: translateX(5px); // İkonu 5px sağa kaydırır
+        scale: 1.15;
+      }
+    }
+  
+  }

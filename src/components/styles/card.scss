@@ -38,18 +38,6 @@
     }
   }
 
-  .detail-btn {
-    background-color: #faf6f2;
-    border: 1px solid saddlebrown;
-    border-radius: 5px;
-    display: block;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    &:hover {
-      background-color: saddlebrown;
-      color: #faf6f2;
-    }
-  }
 }
 
 @media (max-width: 510px) {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './styles/card.scss';
+import ButtonDetail from './ButtonDetail';
 const Card = ({ book }) => {
   return (
     <div className="card shadow">
@@ -18,9 +19,7 @@ const Card = ({ book }) => {
         </div>
       </div>
 
-      <Link to={`/detail/${book.id}`} className="text-md px-2 py-1 detail-btn">
-        Details
-      </Link>
+      <ButtonDetail to={`/detail/${book.id}`} title="Details" />
     </div>
   );
 };

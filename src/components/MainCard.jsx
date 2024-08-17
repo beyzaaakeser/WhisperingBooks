@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/maincard.scss';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
+import ButtonDetail from './ButtonDetail';
 const MainCard = ({ books }) => {
   function getRandomTwoBooks(books) {
     const shuffled = books.sort(() => 0.5 - Math.random()); // Array'i karıştır
@@ -41,12 +42,7 @@ const MainCard = ({ books }) => {
             <div>
               <p className="desc">{book.volumeInfo?.description}</p>
             </div>
-            <Link
-              to={`/detail/${book.id}`}
-              className="text-md px-2 py-1 detail-btn"
-            >
-              Details
-            </Link>
+            <ButtonDetail to={`/detail/${book.id}`} title="Details" />
           </div>
         </div>
       ))}
